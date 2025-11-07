@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Something Just For You...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* Pastel Color Palette */
+        :root {
+            --pink-blush: #FFDDE2; /* Soft Pink */
+            --lilac-dream: #E0BBE4; /* Light Purple/Lilac */
+            --mint-kiss: #D3F3EE; /* Mint Green */
+            --cream-white: #FFFFF0;
+            --deep-rose: #C39EA0; /* Darker accent for text */
+        }
+
+        /* Basic Setup and Background */
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--deep-rose);
+            background: linear-gradient(135deg, var(--pink-blush) 0%, var(--lilac-dream) 50%, var(--mint-kiss) 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        /* Page Container for content area */
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white box */
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px;
+        }
+
+        /* Titles and Headers */
+        h1, h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #A56994; /* Deeper tone for emphasis */
+            margin-bottom: 5px;
+        }
+        h1 {
+            font-size: 3.5em;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 30px;
+            border-bottom: 2px solid var(--lilac-dream);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        /* Text Styling */
+        p, li {
+            font-size: 1.1em;
+            color: var(--deep-rose);
+            margin-bottom: 15px;
+        }
+        strong {
+            color: #8E44AD; /* Extra pop for key words */
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: var(--pink-blush);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* The Heart Button for the surprise reveal */
+        #reveal-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 4em;
+            color: #FF69B4; /* Hot Pink for a classic romantic touch */
+            transition: transform 0.3s ease;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        #reveal-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hidden content */
+        #content {
+            display: none;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Keyframe animation for a smooth reveal */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Photo Placeholder */
+        .photo-placeholder {
+            width: 90%;
+            max-width: 350px;
+            height: 350px;
+            background-color: var(--mint-kiss);
+            border-radius: 50%; /* Circular photo frame */
+            margin: 20px auto;
+            border: 5px solid var(--lilac-dream);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9em;
+            color: #4A4A4A;
+            overflow: hidden; /* Ensures your image fits the circle */
+        }
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="entrance">
+        <h1>A Little Something Just For You...</h1>
+        <p>You are about to step into a space created just for the **most incredible person** I know. Tap the heart below when you're ready.</p>
+        <button id="reveal-button" onclick="revealContent()">💖</button>
+    </div>
+
+    <div class="container" id="content">
+        <h1>Happy Birthday, My Dearest [Her Name]!</h1>
+        
+        <div class="photo-placeholder">
+            **[Place Your Photo Here]**
+        </div>
+
+        <p>There aren't enough words in the world to describe the light you bring into my life. Today, the world celebrates your birth, but I celebrate you **every single day**. Your **kindness**, your **laughter**, your **beautiful mind**—it all makes my world brighter, softer, and more wonderful. I hope this year brings you every piece of joy and magic you deserve. You are extraordinary.</p>
+
+        <h2>✨ Three Things I Adore About You ✨</h2>
+        <ul>
+            <li>
+                <strong>Your Contagious Joy:</strong> I'll never forget the time we [insert a funny, specific memory]. That sound of your full, genuine laugh is my favorite song. Thank you for making life so much fun.
+            </li>
+            <li>
+                <strong>The Warmth of Your Heart:</strong> Whether it's the little things you do for others or the way you listen without judgment, your compassion is a beautiful thing. It inspires me every day.
+            </li>
+            <li>
+                <strong>My Favorite Person to Be Quiet With:</strong> I treasure the moments when we don't even need words, just the comfort of knowing you're right there. You just *get* me, and that means everything.
+            </li>
+        </ul>
+
+        <h2>🌹 A Wish and A Promise 🌹</h2>
+        <p>
+            **Today is your day.** Let the world shower you with love and happiness, because you absolutely deserve it. I wish you the very best birthday, and I promise to always be here, cheering you on and making you smile.
+        </p>
+        <p style="font-size: 1.2em; margin-top: 30px;">
+            Thank you for being you, **my wonderful [Sweetheart/Angel/Crush's Nickname]**.
+        </p>
+        <p style="font-family: 'Dancing Script', cursive; font-size: 2em; color: #8E44AD;">
+            — Love, [Your Name]
+        </p>
+    </div>
+
+    <script>
+        // Simple JavaScript function to reveal the main content
+        function revealContent() {
+            document.getElementById('entrance').style.display = 'none'; // Hide the entrance
+            document.getElementById('content').style.display = 'block'; // Show the main content
+        }
+    </script>
+
+</body>
+</html>
