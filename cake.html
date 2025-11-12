@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Wish!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Pastel Cake Page Palette */
+        :root {
+            --pink-blush: #FFDDE2; 
+            --lilac-dream: #E0BBE4; 
+            --mint-kiss: #D3F3EE; 
+            --cream-white: #FFFFF0;
+            --flame-yellow: #FFC300;
+            --flame-orange: #FF5733;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, var(--mint-kiss), var(--lilac-dream));
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #A56994; 
+            overflow: hidden;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            color: #8E44AD;
+            margin-bottom: 50px;
+        }
+
+        /* --- Cake Structure --- */
+        .cake-container {
+            position: relative;
+            margin-bottom: 50px;
+            perspective: 1000px; /* For 3D tilt effect */
+        }
+        .cake {
+            width: 300px;
+            height: 100px;
+            background: var(--pink-blush);
+            border-radius: 50% / 20%;
+            border: 5px solid var(--lilac-dream);
+            box-shadow: 0 10px 0 #E0BBE4, 0 15px 0 #D3F3EE;
+            position: relative;
+        }
+        .icing {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--cream-white);
+            border-radius: 50% / 20%;
+            z-index: 10;
+        }
+
+        /* --- Candle Design --- */
+        .candle-holder {
+            position: absolute;
+            top: -50px; /* Position above the cake */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+        .candle {
+            width: 10px;
+            height: 40px;
+            background: var(--lilac-dream);
+            border-radius: 2px;
+            position: relative;
+        }
+        .flame {
+            width: 8px;
+            height: 15px;
+            background-color: var(--flame-yellow);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            top: -10px;
+            left: 1px;
+            box-shadow: 0 0 10px 2px var(--flame-yellow), 0 0 15px 5px var(--flame-orange);
+            animation: flicker 0.2s infinite alternate;
+            transition: opacity 0.5s ease;
+        }
+        .flame.off {
+            opacity: 0;
+        }
+        @keyframes flicker {
+            from { transform: scale(1.0); box-shadow: 0 0 8px 1px var(--flame-yellow); }
+            to { transform: scale(1.05); box-shadow: 0 0 12px 3px var(--flame-orange); }
+        }
+
+        /* --- Blow Button --- */
+        #blow-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background-color: #FF69B4;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #C1518D;
+            transition: all 0.1s ease;
+        }
+        #blow-button:active {
+            box-shadow: 0 2px 0 #C1518D;
+            transform: translateY(3px);
+        }
+        #blow-button:disabled {
+            background-color: var(--deep-rose);
+            cursor: default;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #8E44AD;
+            display: none;
+        }
+        .message.show {
+            display: block;
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ready to Make Your Wish?</h1>
+
+    <div class="cake-container">
+        <div class="cake">
+            <div class="icing"></div>
+            <div class="candle-holder">
+                <div class="candle">
+                    <div class="flame" id="flame-one"></div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <button id="blow-button" onclick="blowOutCandle()">
+        Click Here to "Blow"
+    </button>
+
+    <p class="message" id="success-message">
+        🎉 HAPPY BIRTHDAY! Your wish is officially on its way! 🎉
+    </p>
+
+    <p style="margin-top: 30px;">
+        Orait bro dah habis, Enoy your day bro!!!
+    </p>
+
+    <script>
+        let isBlown = false;
+
+        function blowOutCandle() {
+            if (isBlown) return; 
+
+            // 1. Blow out the flame
+            document.getElementById('flame-one').classList.add('off');
+
+            // 2. Update the button and message
+            document.getElementById('blow-button').textContent = "Wish Made!";
+            document.getElementById('blow-button').disabled = true;
+            
+            document.getElementById('success-message').classList.add('show');
+            
+            isBlown = true;
+            
+            // Optional: Play a short congratulatory sound here if you have an audio file
+        }
+    </script>
+</body>
+</html>
